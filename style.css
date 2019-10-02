@@ -1,0 +1,17 @@
+h1{
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.transparancy {
+    background: black;
+}
+.hidden {
+    display: none;
+}
+.input-box{
+    height: 24px;
+    width: 100px;
+    font-size: 23px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

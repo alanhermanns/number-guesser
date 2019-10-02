@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-
+<h1>GUESSING GAME</h1>
 <body>
+    <details>
+        <p>pick a number:</p>
+    <label>
+        <input class='input-box' id= 'number-input' type='number' min='1' max='20' value='1'>
+    </label>
+    <button id= 'button'>Go for it.</button>
+    <div id= 'result-area'>
+        
+    </div>
+    </details>
+    <br>
+    <button class= 'hidden' id= 'refresh-button'>
+        <p>Again!</p>
+    </button>
 
-    <script src="app.js"></script>
+    <script type= 'module' src="app.js"></script>
+    <script type='module' src="number-checker.js"></script>
 </body>
 
 </html>
