@@ -13,37 +13,37 @@ let attempts = 0;
 button.addEventListener('click', () => {
     let userInput = parseInt(guess.value);
     let displayMessage = '';
+    if (attempts >= 3 && compareNumbers(userInput, correctNumber) === 0){
+        displayMessage = 'got it, but too late!';
+    }
+    else if (attempts >= 3 && attempts < 7 && compareNumbers(userInput, correctNumber) !== 0) {
+        result.textContent = ('Oops! You are out, bud!');
+        refreshButton.classList.remove('hidden');
+    }
+    else if (attempts === 7) {
+        result.textContent = ('Do not push it!');
+    } 
+    if (attempts >= 8) {
+        result.textContent = ('No way, bud! Don\'t be that way.');
+        button.classList.add('hidden');
+        header.textContent = ('GUESSING FLAME');
+        
+    } 
     // if (attempts >= 3 && compareNumbers(userInput, correctNumber) === 0){
     //     displayMessage = 'got it, but too late!';
-    if (compareNumbers(userInput, correctNumber) === 0) {
+    if (compareNumbers(userInput, correctNumber) === 0 && attempts < 3) {
         displayMessage = 'got it.';
         refreshButton.classList.remove('hidden');
-    } else if (compareNumbers(userInput, correctNumber) === -1){
+    } else if (compareNumbers(userInput, correctNumber) === -1 && attempts < 3){
         displayMessage = 'too low.';
     }
-    else {
+    else if (compareNumbers(userInput, correctNumber) === 1 && attempts < 3){
         displayMessage = 'too high.';
     }
     result.textContent = displayMessage;
 
     attempts = attempts + 1;
     
-    if (attempts >= 3 && attempts < 7 && compareNumbers(userInput, correctNumber) !== 0) {
-        result.textContent = 'Oops! You are out, bud!';
-        refreshButton.classList.remove('hidden');
-    }
-    // if (attempts >= 3 && compareNumbers(userInput, correctNumber) === 0){
-    //     displayMessage = 'got it, but too late!';
-    // }
-    else if (attempts === 7) {
-        result.textContent = ('Do not push it!');
-    } 
-    else if (attempts >= 8) {
-        result.textContent = ('No way, bud! Don\'t be that way.');
-        button.classList.add('hidden');
-        header.textContent = ('GUESSING FLAME');
-        
-    } 
 });
     
 refreshButton.addEventListener('click', () => {
